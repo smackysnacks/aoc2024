@@ -1,5 +1,9 @@
-pub fn iter_lines(s: &str) -> impl Iterator<Item = &str> {
-    s.lines()
+pub mod counter;
+
+pub use counter::*;
+
+pub fn iter_lines<T: AsRef<str> + ?Sized>(s: &T) -> impl Iterator<Item = &str> {
+    s.as_ref().lines()
 }
 
 pub fn lines(s: &str) -> Vec<String> {
