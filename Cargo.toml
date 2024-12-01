@@ -1,0 +1,12 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+
+[workspace.lints.rust]
+rust_2018_idioms = "warn"
+
+[workspace.dependencies]
+aoc2024-core = { path = "crates/aoc2024-core" }
