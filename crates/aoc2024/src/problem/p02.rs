@@ -1,4 +1,4 @@
-use aoc2024_core::iter_lines;
+use aoc2024_core::lines_iter;
 
 fn check(report: &[i32]) -> bool {
     let diff: Vec<_> = report.windows(2).map(|pair| pair[0] - pair[1]).collect();
@@ -42,7 +42,7 @@ fn part2(reports: Vec<Vec<i32>>) {
 pub fn solve() {
     let input = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/inputs/p02.in"));
 
-    let reports: Vec<Vec<i32>> = iter_lines(input)
+    let reports: Vec<Vec<i32>> = lines_iter(input)
         .map(|line| {
             line.split_whitespace()
                 .map(|num| num.parse::<i32>().unwrap())
