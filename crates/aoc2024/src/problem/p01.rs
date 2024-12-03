@@ -1,11 +1,11 @@
-use aoc2024_core::{iter_lines, Counter};
+use aoc2024_core::{lines_iter, Counter};
 
 pub fn solve() {
     let input = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/inputs/p01.in"));
 
     let mut left = Vec::new();
     let mut right = Vec::new();
-    for line in iter_lines(input) {
+    for line in lines_iter(input) {
         let mut split = line.split_whitespace();
         left.push(split.next().unwrap().parse::<usize>().unwrap());
         right.push(split.next().unwrap().parse::<usize>().unwrap());

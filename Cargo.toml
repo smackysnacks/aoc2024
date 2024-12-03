@@ -10,3 +10,7 @@ rust_2018_idioms = "warn"
 
 [workspace.dependencies]
 aoc2024-core = { path = "crates/aoc2024-core" }
+
+itertools = { version = "0.13.0" }
+regex = { version = "1.11.1" }
+sscanf = { version = "0.4.2" }
