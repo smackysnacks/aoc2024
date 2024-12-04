@@ -12,18 +12,14 @@ fn part1(input: &str) {
 }
 
 fn part2(input: &str) {
-    let re = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)|(d)(o)n?'?t?\(\)").unwrap();
+    let re = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)|(d)(o)(?:n't)?\(\)").unwrap();
     let mut sum = 0;
     let mut enabled = true;
     for (s, [x, y]) in re.captures_iter(input).map(|c| c.extract()) {
         match s {
             "do()" => enabled = true,
             "don't()" => enabled = false,
-            _ => {
-                if enabled {
-                    sum += parse::<usize>(x) * parse::<usize>(y)
-                }
-            }
+            _ => sum += parse::<usize>(x) * parse::<usize>(y) * enabled as usize,
         }
     }
 
