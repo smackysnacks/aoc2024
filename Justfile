@@ -52,7 +52,7 @@ coverage:
         echo "cargo-nextest or cargo-llvm-cov not found. You can install them by running: cargo install cargo-llvm-cov cargo-nextest"
         exit 1
     fi
-    cargo llvm-cov nextest --workspace
+    cargo llvm-cov nextest --no-tests=warn --workspace
 
 # Run cargo clippy on workspace
 lint:
