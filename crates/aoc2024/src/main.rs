@@ -5,4 +5,5 @@ fn main() {
     problem::p02::solve();
     problem::p03::solve();
     problem::p04::solve();
+    problem::p05::solve();
 }
